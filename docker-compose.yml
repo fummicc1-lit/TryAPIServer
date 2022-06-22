@@ -4,6 +4,5 @@ services:
     build: .
     volumes:
       - .:/app
-      - /app/vendor/bundle
     ports:
       - 127.0.0.1:4567:4567

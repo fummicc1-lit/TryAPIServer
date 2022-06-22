@@ -1,7 +1,6 @@
-FROM ruby:2.7-slim
+FROM node:16-slim
 WORKDIR /app
 
-COPY Gemfile ./
-COPY Gemfile.lock ./
-RUN bundle config --local set path 'vendor/bundle'
-RUN bundle install
+COPY ./ ./
+
+RUN yarn

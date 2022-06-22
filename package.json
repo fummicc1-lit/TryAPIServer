@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "```shell docker build . -t lit-ruby-slim docker run --mount type=bind,source=\"$(pwd)\",target=/app -itd lit-ruby-slim ```",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fummicc1-lit/Try-API-Server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fummicc1-lit/Try-API-Server/issues"
+  },
+  "homepage": "https://github.com/fummicc1-lit/Try-API-Server#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
