@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-todos = [
+let todos = [
     {
         "title": "7時に起床する",
         "priority": 3
@@ -33,6 +33,8 @@ app.get("/todos", (req, res) => {
 
 app.post("/todos", (req, res) => {
     const { title, priority } = req.body
+    console.log("title", title);
+    console.log("priority", priority);
     todos.push({
         "title": title,
         "priority": priority || 2
