@@ -29,7 +29,7 @@ todos = [
 
 app.get("/todos", (req, res) => {
     res.json({
-        "todos": todos
+        "todos": JSON.stringify(todo)
     });
 });
 
