@@ -32,10 +32,10 @@ app.get("/todos", (req, res) => {
 });
 
 app.post("/todos", (req, res) => {
-    const [title, priority] = req.body
+    const { title, priority } = req.body
     todos.push({
         "title": title,
-        "priority": priority
+        "priority": priority || 2
     });
     res.status(201);
     res.send("Success!");
