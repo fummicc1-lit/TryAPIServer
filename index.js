@@ -28,9 +28,7 @@ todos = [
 ]
 
 app.get("/todos", (req, res) => {
-    res.json({
-        "todos": JSON.stringify(todo)
-    });
+    res.json(todos);
 });
 
 app.post("/todos", (req, res) => {
