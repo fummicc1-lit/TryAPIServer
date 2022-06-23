@@ -2,12 +2,6 @@ const express = require("express");
 
 const app = express();
 
-app.get("/", (req, res) => {
-    res.send("Hello World!");
-});
-
-app.use(express.json);
-
 todos = [
     {
         "title": "7時に起床する",
@@ -25,7 +19,13 @@ todos = [
         "title": "早めに就寝する",
         "priority": 1
     }
-]
+];
+
+app.use(express.json());
+
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+});
 
 app.get("/todos", (req, res) => {
     res.json(todos);
@@ -41,4 +41,6 @@ app.post("/todos", (req, res) => {
     res.send("Success!");
 })
 
-app.listen(process.env.PORT, () => { });
+app.listen(process.env.PORT || 8080, () => {
+    console.log(process.env.PORT || 8080);
+ });
