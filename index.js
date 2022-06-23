@@ -2,24 +2,28 @@ const express = require("express");
 
 const app = express();
 
-let todos = [
-    {
-        "title": "7時に起床する",
-        "priority": 3
-    },
-    {
-        "title": "学校に行く",
-        "priority": 3
-    },
-    {
-        "title": "開発をする",
-        "priority": 2
-    },
-    {
-        "title": "早めに就寝する",
-        "priority": 1
-    }
+const defaults = [
+    [
+        {
+            "title": "7時に起床する",
+            "priority": 3
+        },
+        {
+            "title": "学校に行く",
+            "priority": 3
+        },
+        {
+            "title": "開発をする",
+            "priority": 2
+        },
+        {
+            "title": "早めに就寝する",
+            "priority": 1
+        }
+    ]
 ];
+
+let todos = defaults;
 
 app.use(express.json());
 
@@ -41,6 +45,11 @@ app.post("/todos", (req, res) => {
     });
     res.status(201);
     res.send("Success!");
+})
+
+app.delete("/todos", (req, res) => {
+    todos = defaults;
+    res.status(200).send("Clear");
 })
 
 app.listen(process.env.PORT || 8080, () => {
